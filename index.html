@@ -1,1 +1,59 @@
+<!doctype html>
+<html lang="pt-MZ">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Temply - Controle de clima</title>
+        <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<header class="header">
+				<h1>Temply</h1>
+				<form id="formSearch">
+                    <input type="search" id="search" placeholder="Buscar cidade...">
+                    <button type="submit" id="btnSearch" aria-label="Buscar cidade">🔍</button>
+                </form>
+			</header>
 
+			<main>
+				<div class="weather">
+					<div class="weather-icone" aria-hidden="true">🌤️</div>
+					<div class="weather-title">--<span>°C</span></div>
+					<div class="weather-suggest">Ensolarado / SP</div>
+				</div>
+
+                <div class="weather-info">
+                    <div class="card">
+                        <h2 class="card-title">Vento</h2>
+                        <div class="card-info">
+                            <span>-- km/h</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Umidade</h2>
+                        <div class="card-info">
+                            <span>-- %</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Sensação</h2>
+                        <div class="card-info">
+                            <span>-- °C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="prevision-list">
+                    <h2 class="sr-only">Previsão dos próximos dias</h2>
+                </section>
+
+			</main>
+		</div>
+
+        <script src="script.js" defer></script>
+
+	</body>
+</html>
