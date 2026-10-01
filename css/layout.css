@@ -39,13 +39,18 @@ h1 {
   border-radius: 8px;
   background-color: var(--surface);
   color: var(--text);
-  border: var(--border);
+  border: 1px solid var(--border);
   height: 100%;
   outline: 1px solid var(--surface-cinza);
+  transition: all 0.3s ease;
 }
 
 #formSearch input:focus {
-  outline: 1px solid var(--surface-cinza);
+  outline: 1px solid var(--accent-dark);
+}
+
+#formSearch input:hover {
+  outline: 1px solid var(--accent-dark);
 }
 
 #formSearch button {
@@ -142,8 +147,10 @@ main {
 
 .prevision-list h2 {
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .list {
-  height: 80px;
+  border: 2px dashed var(--border);
+  height: 100px;
 }
