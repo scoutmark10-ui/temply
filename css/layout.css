@@ -1,91 +1,149 @@
 body {
-	background-color: var(--bg);
-	color: var(--text);
-	font-family: "Poppins", sans-serif;
-	height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
 }
 
 .container {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* header */
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 12px;
-    outline: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--border);
 }
 
 h1 {
-	text-transform: uppercase;
-	font-size: 28px;
+  text-transform: uppercase;
+  font-size: 28px;
 }
 
 #formSearch {
-	display: flex;
-	gap: 12px;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
 }
 
 #formSearch input {
-	padding: 12px;
-	border-radius: 8px;
-	background-color: var(--surface);
-	color: var(--text);
-	border: var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--surface);
+  color: var(--text);
+  border: var(--border);
+  height: 100%;
+  outline: 1px solid var(--surface-cinza);
+}
+
+#formSearch input:focus {
+  outline: 1px solid var(--surface-cinza);
 }
 
 #formSearch button {
-	padding: 12px;
-	border-radius: 8px;
-	cursor: pointer;
-	background-color: var(--surface);
-	color: var(--text);
-	border: var(--border);
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--accent);
+  color: var(--text);
+  font-size: 22px;
+  font-weight: bold;
+  border: var(--border);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+#formSearch button:hover {
+  border: 1px solid var(--accent-dark);
+  background: var(--surface-cinza);
 }
 
 /* Main */
 
 main {
-	width: 94%;
-	margin: 0 auto;
-	flex: 1;
+  width: 94%;
+  margin: 0 auto;
 }
 
 /* Card weather */
 
 .weather {
-	outline: 1px solid gray;
-	margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  gap: 10px;
+  background-color: var(--surface);
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.weather:hover {
+  border: 1px solid gray;
+  background: var(--surface-cinza);
+}
+
+.weather-icone {
+  font-size: 38px;
 }
 
 /* Additional informations */
 
 .weather-info {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
 }
 
 .card {
-	outline: 1px solid gray;
+  display: block;
+  text-align: center;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  width: 31%;
+  padding: 10px;
+  background-color: var(--surface);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border: 1px solid gray;
+  background: var(--surface-cinza);
+  transform: scale(1.05);
+}
+
+.card h2 {
+  font-size: 18px;
+}
+
+.card span {
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
 /* Prevision next days */
 
 .prevision-list {
-	outline: 1px solid gray;
-	margin-top: 30px;
+  margin-top: 30px;
+}
+
+.prevision-list h2 {
+  font-size: 18px;
 }
 
 .list {
-	height: 80px;
-	/* background-color: darkblue; */
+  height: 80px;
 }
