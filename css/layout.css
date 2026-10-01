@@ -1,1 +1,91 @@
-body {}
+body {
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: "Poppins", sans-serif;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px;
+    outline: 1px solid gray;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 28px;
+}
+
+#formSearch {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	align-items: center;
+}
+
+#formSearch input {
+	padding: 12px;
+	border-radius: 8px;
+	background-color: var(--surface);
+	color: var(--text);
+	border: var(--border);
+}
+
+#formSearch button {
+	padding: 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: var(--surface);
+	color: var(--text);
+	border: var(--border);
+}
+
+/* Main */
+
+main {
+	width: 94%;
+	margin: 0 auto;
+	flex: 1;
+}
+
+/* Card weather */
+
+.weather {
+	outline: 1px solid gray;
+	margin-bottom: 20px;
+}
+
+/* Additional informations */
+
+.weather-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 5px;
+}
+
+.card {
+	outline: 1px solid gray;
+}
+
+/* Prevision next days */
+
+.prevision-list {
+	outline: 1px solid gray;
+	margin-top: 30px;
+}
+
+.list {
+	height: 80px;
+	/* background-color: darkblue; */
+}

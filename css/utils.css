@@ -1,0 +1,7 @@
+.text {
+    color: var(--text);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
