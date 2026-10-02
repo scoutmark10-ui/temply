@@ -1,156 +1,171 @@
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: "Poppins", sans-serif;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
+	width: 100%;
+	max-width: 480px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
-/* header */
+/* ==========================================================================
+   HEADER & SEARCH
+   ========================================================================*/
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid var(--border);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
+	background-color: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 16px;
 }
 
 h1 {
-  text-transform: uppercase;
-  font-size: 28px;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 600;
+	letter-spacing: 1px;
 }
 
 #formSearch {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	height: 40px;
 }
 
 #formSearch input {
-  padding: 12px;
-  border-radius: 8px;
-  background-color: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  height: 100%;
-  outline: 1px solid var(--surface-cinza);
-  transition: all 0.3s ease;
+	padding: 0 12px;
+	border-radius: 8px;
+	background-color: var(--bg);
+	color: var(--text);
+	border: 1px solid var(--border);
+	height: 100%;
+	outline: none;
+	font-family: inherit;
+	font-size: 14px;
+	transition: border-color 0.3s ease;
 }
 
-#formSearch input:focus {
-  outline: 1px solid var(--accent-dark);
-}
-
+#formSearch input:focus,
 #formSearch input:hover {
-  outline: 1px solid var(--accent-dark);
+	border-color: var(--accent);
 }
 
 #formSearch button {
-  padding: 6px;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: var(--accent);
-  color: var(--text);
-  font-size: 22px;
-  font-weight: bold;
-  border: var(--border);
-  height: 100%;
-  transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 100%;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: var(--accent);
+	color: var(--bg);
+	font-size: 18px;
+	border: 1px solid transparent;
+	transition: all 0.3s ease;
 }
 
 #formSearch button:hover {
-  border: 1px solid var(--accent-dark);
-  background: var(--surface-cinza);
+	background-color: var(--accent-dark);
+	color: var(--text);
 }
 
-/* Main */
-
+/* ==========================================================================
+   3. MAIN CONTENT
+   ========================================================================== */
 main {
-  width: 94%;
-  margin: 0 auto;
+	width: 100%;
 }
 
-/* Card weather */
-
+/* Card Weather Principal */
 .weather {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  gap: 10px;
-  background-color: var(--surface);
-  padding: 30px;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 20px;
+	border: 1px solid var(--border);
+	gap: 10px;
+	background-color: var(--surface);
+	padding: 30px;
+	margin-bottom: 20px;
+	transition: all 0.3s ease;
 }
 
 .weather:hover {
-  border: 1px solid gray;
-  background: var(--surface-cinza);
+	border-color: rgba(255, 255, 255, 0.2);
+	background-color: var(--surface-cinza);
 }
 
 .weather-icone {
-  font-size: 38px;
+	font-size: 48px;
 }
 
-/* Additional informations */
+.weather-title {
+	font-size: 36px;
+	font-weight: 600;
+}
 
+.weather-suggest {
+	color: var(--text-muted);
+	font-size: 14px;
+}
+
+/* Weather Info Cards */
 .weather-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
-  width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	width: 100%;
 }
 
 .card {
-  display: block;
-  text-align: center;
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  width: 31%;
-  padding: 10px;
-  background-color: var(--surface);
-  transition: all 0.3s ease;
+	text-align: center;
+	border-radius: 16px;
+	border: 1px solid var(--border);
+	padding: 16px 8px;
+	background-color: var(--surface);
+	transition: all 0.3s ease;
 }
 
 .card:hover {
-  border: 1px solid gray;
-  background: var(--surface-cinza);
-  transform: scale(1.05);
+	border-color: rgba(255, 255, 255, 0.2);
+	background-color: var(--surface-cinza);
+	transform: translateY(-2px);
 }
 
 .card h2 {
-  font-size: 18px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--text-muted);
+	margin-bottom: 6px;
 }
 
 .card span {
-  font-size: 14px;
-  color: var(--text-muted);
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--text);
 }
 
-/* Prevision next days */
-
+/* Prevision Section */
 .prevision-list {
-  margin-top: 30px;
-}
-
-.prevision-list h2 {
-  font-size: 18px;
-  margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .list {
-  border: 2px dashed var(--border);
-  height: 100px;
+	border: 1px dashed var(--border);
+	border-radius: 16px;
+	min-height: 80px;
 }
