@@ -35,7 +35,7 @@
 			<main>
 				<div class="weather">
 					<div class="weather-icone" aria-hidden="true">🌤️</div>
-					<div class="weather-title">--<span>°C</span></div>
+					<div class="weather-title"><span id="temperature">--°C</span></div>
 					<div class="weather-suggest">Ensolarado / SP</div>
 				</div>
 
@@ -43,28 +43,27 @@
 					<div class="card">
 						<h2 class="card-title">Vento</h2>
 						<div class="card-info">
-							<span>-- km/h</span>
+							<span id="vento">-- km/h</span>
 						</div>
 					</div>
 
 					<div class="card">
 						<h2 class="card-title">Umidade</h2>
 						<div class="card-info">
-							<span>-- %</span>
+							<span id="umidade">-- %</span>
 						</div>
 					</div>
 
 					<div class="card">
 						<h2 class="card-title">Sensação</h2>
 						<div class="card-info">
-							<span>-- °C</span>
+							<span id="sensacao">-- °C</span>
 						</div>
 					</div>
 				</div>
 
 				<section class="prevision-list">
 					<h2 class="sr-only">Previsão dos próximos dias</h2>
-
 					<div class="list"></div>
 				</section>
 			</main>
