@@ -1,60 +1,60 @@
+// SCRIPT.JS
+
+// VARIABLES
 const url = "https://api.open-meteo.com/v1/forecast";
-const temperatura = document.querySelector("#temperature");
-const vento = document.querySelector("#vento");
-const umidade = document.querySelector("#umidade");
-const sensacao = document.querySelector("#sensacao");
+const temperature = document.querySelector("#temperature");
+const wind = document.querySelector("#vento");
+const humidity = document.querySelector("#umidade");
+const temperatureAparent = document.querySelector("#sensacao");
 
-navigator.geolocation.getCurrentPosition((position) => {
-  
-	const latitude = position.coords.latitude;
-	const longitude = position.coords.longitude;
+// GET LOCATION
+navigator.geolocation.getCurrentPosition(
+	(position) => {
+		const latitude = position.coords.latitude;
+		const longitude = position.coords.longitude;
 
-	console.log(latitude, longitude);
+		console.log(latitude, longitude);
 
-  const params = new URLSearchParams({
-	  latitude,
-	  longitude,
-	  current: "temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m",
-  });
+		const params = new URLSearchParams({
+			latitude,
+			longitude,
+			current:
+				"temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m",
+		});
 
-  getWeather(params);
+		getWeather(params);
+	},
+	(erro) => {
+		console.log(`❌ ERRO: ${erro}`);
+	},
+);
 
-});
-
+// GET WEATHER
 async function getWeather(params) {
 	try {
 		const response = await fetch(`${url}?${params}`);
 
 		if (!response.ok) {
-			console.log("Erro: ", response.status);
+			if (response.status === 400) {
+				throw new Error("Parâmetros inválidos: verifique as coordenadas.");
+			} else if (response.status === 404) {
+				throw new Error("Cidade ou localização não encontrada.");
+			} else if (response.status >= 500) {
+				throw new Error("Servidor da Open-Meteo fora do ar.");
+			} else {
+				throw new Error(`Erro desconhecido: ${response.status}`);
+			}
 		}
 
-		const data = await response.json()
-    
-		console.log(`Coordinates: ${data.latitude}ᵒN ${data.longitude}ᵒE`);
-		console.log(
-			`Temperature ${data.current.temperature_2m}${data.current_units.temperature_2m}`,
-		);
-		console.log(
-			`Wind Speed ${data.current.wind_speed_10m} ${data.current_units.wind_speed_10m}`,
-		);
-		console.log(
-			`Humidity ${data.current.relative_humidity_2m}${
-				data.current_units.relative_humidity_2m
-			}`,
-		);
-		console.log(
-			`Apparent temperature ${data.current.apparent_temperature}${
-				data.current_units.apparent_temperature
-			}`,);
+		const data = await response.json();
 
-      temperatura.textContent = `${data.current.temperature_2m}${data.current_units.temperature_2m}`;
-      
-      vento.textContent = `${data.current.wind_speed_10m} ${data.current_units.wind_speed_10m}`;
-    
-      umidade.textContent = `${data.current.relative_humidity_2m} ${data.current_units.relative_humidity_2m}`;
-    
-      sensacao.textContent = `${data.current.apparent_temperature}${data.current_units.apparent_temperature}`;
+		temperature.textContent = `${data.current.temperature_2m}${data.current_units.temperature_2m}`;
+
+		wind.textContent = `${data.current.wind_speed_10m} ${data.current_units.wind_speed_10m}`;
+
+		humidity.textContent = `${data.current.relative_humidity_2m} ${data.current_units.relative_humidity_2m}`;
+
+		temperatureAparent.textContent = `${data.current.apparent_temperature}${data.current_units.apparent_temperature}`;
 	} catch (err) {
 		console.log(`❌ ERRO: ${err}`);
 	}
