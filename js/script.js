@@ -2,6 +2,7 @@
 
 // VARIABLES
 const url = "https://api.open-meteo.com/v1/forecast";
+const btnSearch = document.querySelector("#btnSearch");
 const temperature = document.querySelector("#temperature");
 const wind = document.querySelector("#vento");
 const humidity = document.querySelector("#umidade");
@@ -10,6 +11,10 @@ const temperatureAparent = document.querySelector("#sensacao");
 // DEFAULT DATA
 const DEFAULT_LAT = -25.9653;
 const DEFAULT_LON = 32.5892;
+
+btnSearch.addEventListener("click", () => {
+	alert('⚠️ Weather search is currently unavailable')
+} )
 
 // GET LOCATION
 navigator.geolocation.getCurrentPosition(

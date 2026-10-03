@@ -165,7 +165,14 @@ main {
 }
 
 .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 	border: 1px dashed var(--border);
 	border-radius: 16px;
 	min-height: 80px;
+}
+
+.list p {
+  color: var(--text-muted);
 }
