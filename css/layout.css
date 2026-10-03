@@ -25,6 +25,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 16px;
+  gap: 8px;
 	background-color: var(--surface);
 	border: 1px solid var(--border);
 	border-radius: 16px;
@@ -51,6 +52,7 @@ h1 {
 	color: var(--text);
 	border: 1px solid var(--border);
 	height: 100%;
+  width: 100%;
 	outline: none;
 	font-family: inherit;
 	font-size: 14px;
