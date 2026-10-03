@@ -85,3 +85,8 @@ function renderWeather(data) {
 
 	temperatureAparent.textContent = `${data.current.apparent_temperature}${data.current_units.apparent_temperature}`;
 }
+
+// Service Worker
+if ("serviceWorker" in navegator) {
+  navigator.serviceWorker.register("../sw.js");
+}
