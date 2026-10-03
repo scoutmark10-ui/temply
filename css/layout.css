@@ -3,9 +3,6 @@ body {
 	color: var(--text);
 	font-family: "Poppins", sans-serif;
 	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	padding: 20px;
 }
 
