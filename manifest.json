@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest.json",
+	"name": "Temply",
+	"short_name": "Temply",
+	"description": "Controle de clima minimalista e moderno, desenvolvido com foco em performance e acessibilidade",
+	"start_url": "./index.html",
+	"display": "standalone",
+	"theme_color": "#0284c7",
+	"background_color": "#090d16",
+	"icons": [
+		{
+			"src": "./assets/img/192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpuse": "any maskable"
+		},
+		{
+			"src": "./assets/img/512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpuse": "any maskable"
+		}
+	]
+}
