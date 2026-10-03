@@ -31,7 +31,7 @@ Como o projeto é construído apenas com tecnologias nativas (Vanilla JS), não 
 
 1. **Clone este repositório:**
    ```bash
-   git clone [https://github.com/seu-usuario/temply.git](https://github.com/seu-usuario/temply.git)
+   git clone [https://github.com/scoutmark10-ui/temply.git](https://github.com/scoutmark10-ui/temply.git)
    ```
 
 Navegue até a pasta do projeto:
